@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Diet</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" th:href="@{/style.css}">
+</head>
+<body>
+<!-- Navigation -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+        <a class="navbar-brand" th:href="@{/}">Horse Training</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="justify-text-right">
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav me-auto">
+                <li class="nav-item">
+                    <a class="nav-link active" th:href="@{/}">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" th:href="@{/diet}">Diet</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" th:href="@{/breed}">Breed</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="healthDropdown" role="button" data-bs-toggle="dropdown">
+                        Health & Behavior
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" th:href="@{/sickness}">Sickness</a></li>
+                        <li><a class="dropdown-item" th:href="@{/behaviour}">Behavior</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" th:href="@{/contact}">Contact Us</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" th:href="@{/members}">Members</a>
+                </li>
+            </ul>
+
+        </div>
+
+        </div>
+    </div>
+</nav>
+
+<div class="container mt-5">
+    <h1 class="text-center mb-4">Horse Nutrition & Diet</h1>
+
+    <div class="row">
+        <div class="col-md-8">
+            <div class="card mb-4">
+                <div class="card-header bg-info text-white">
+                    <h3>Basic Dietary Requirements</h3>
+                </div>
+                <div class="card-body">
+                    <p>Horses are herbivores with a digestive system designed for continuous grazing. A proper diet is essential for their health and performance.</p>
+
+                    <h5>Essential Components:</h5>
+                    <ul>
+                        <li><strong>Forage:</strong> Should make up 50-100% of the diet (hay, pasture)</li>
+                        <li><strong>Concentrates:</strong> Grains or commercial feeds for additional energy</li>
+                        <li><strong>Vitamins/Minerals:</strong> Especially important for growing or performance horses</li>
+                        <li><strong>Water:</strong> Clean, fresh water available at all times</li>
+                    </ul>
+
+                    <h5>Feeding Guidelines:</h5>
+                    <ul>
+                        <li>Feed at least 1.5-2% of body weight in forage daily</li>
+                        <li>Divide concentrates into multiple small meals</li>
+                        <li>Make dietary changes gradually over 7-10 days</li>
+                        <li>Provide salt/mineral blocks</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card mb-4">
+                <div class="card-header bg-warning">
+                    <h3>Sample Diet Plans</h3>
+                </div>
+                <div class="card-body">
+                    <h5>Maintenance Horse (1100 lbs):</h5>
+                    <ul>
+                        <li>15-20 lbs good quality hay</li>
+                        <li>1-2 lbs fortified grain</li>
+                        <li>Free choice water & salt</li>
+                    </ul>
+
+                    <h5>Performance Horse:</h5>
+                    <ul>
+                        <li>15-20 lbs hay</li>
+                        <li>5-8 lbs grain (divided)</li>
+                        <li>Electrolytes as needed</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4 mb-4 mb-md-0">
+                <h5>Horse Training</h5>
+                <p>Providing quality horse training and riding lessons.</p>
+            </div>
+            <div class="col-md-4 mb-4 mb-md-0">
+                <h5>Quick Links</h5>
+                <ul class="list-unstyled">
+                    <li><a th:href="@{/}" class="text-white">Home</a></li>
+                    <li><a th:href="@{/breed}" class="text-white">Horse Breeds</a></li>
+                    <li><a th:href="@{/lessons}" class="text-white">Riding Lessons</a></li>
+                    <li><a th:href="@{/contact}" class="text-white">Contact Us</a></li>
+                </ul>
+            </div>
+            <div class="col-md-4">
+                <h5>Contact Info</h5>
+                <address>
+                    Alakoy, Nicosia<br>
+                    Bahcesehir University,<br>
+                    Student Name: David Unegbu , Ahmad Rajab<br>
+                    Email: ounegbu@baucyprus.edu.tr , arajab@baucyprus.edu.tr
+                </address>
+            </div>
+        </div>
+        <hr class="bg-light">
+        <div class="text-center">
+            <p class="mb-0">&copy; 2025 Frontend  Horse  Project. All rights reserved.</p>
+        </div>
+    </div>
+</footer>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title> Frontend  Horse  Project</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Custom CSS -->
+  <link rel="stylesheet" th:href="@{/style.css}">
+
+</head>
+<body>
+
+
+<!-- Navigation -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container">
+    <a class="navbar-brand" th:href="@{/}">Horse Training</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="justify-text-right">
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav me-auto">
+        <li class="nav-item">
+          <a class="nav-link active" th:href="@{/}">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" th:href="@{/diet}">Diet</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" th:href="@{/breed}">Breed</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="healthDropdown" role="button" data-bs-toggle="dropdown">
+            Health & Behavior
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" th:href="@{/sickness}">Sickness</a></li>
+            <li><a class="dropdown-item" th:href="@{/behaviour}">Behavior</a></li>
+          </ul>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" th:href="@{/contact}">Contact Us</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" th:href="@{/members}">Members</a>
+        </li>
+      </ul>
+      <!--
+      <form class="d-flex" th:action="@{/search}" method="get">
+        <input class="form-control me-2" type="search" name="query" placeholder="Search...">
+        <button class="btn btn-outline-light" type="submit">Search</button>
+      </form> -->
+    </div>
+    </div>
+  </div>
+</nav>
+
+
+<!-- Hero Section -->
+<section class="hero-section">
+  <div id="fullScreenDiv">
+
+    <video id="video" role="presentation" preload="auto" playsinline="" crossorigin="anonymous" loop="" muted="" autoplay="" class="blur">
+      <source th:src="@{/images/bkgrunvid.mp4}" type = "video/mp4">
+    </video>
+
+    <div class="hero-content">
+      <h1 class="display-3 fw-bold">Frontend  Horse  Project</h1>
+      <p class="lead fw-normal">Student Name: David Unegbu & Ahmed Rajab</p>
+      <p class="lead">Student ID: 32320897 & 32321583</p>
+      <div class="d-flex gap-3 justify-content-center">
+        <a th:href="@{/adult}" class="btn btn-primary btn-lg mt-3">Book Adult</a>
+        <a th:href="@{/child}" class="btn btn-primary btn-lg mt-3">Book Child</a>
+      </div>
+    </div>
+
+  </div>
+
+</section>
+
+<!-- Main Content -->
+<div class="container my-5">
+  <!-- Popular Breeds Section -->
+  <section class="mb-5">
+    <h2 class="text-center mb-4">Popular Horse Breeds</h2>
+    <div class="row">
+      <!-- Breed 1 -->
+      <div class="col-md-4 mb-4">
+        <div class="card breed-card h-100">
+          <img th:src="@{/images/arabian_horse_img.jpg}"  class="card-img-top crop-img"  alt="Arabian Horse">
+
+          <div class="card-body">
+            <h5 class="card-title">Arabian</h5>
+            <p class="card-text">Known for their endurance and distinctive head shape, Arabian horses are one of the oldest breeds.</p>
+            <a th:href="@{/breed}" class="btn btn-outline-primary">Learn More</a>
+          </div>
+        </div>
+      </div>
+      <!-- Breed 2 -->
+      <div class="col-md-4 mb-4">
+        <div class="card breed-card h-100">
+          <img th:src="@{/images/thorough_horse.jpg}" class="card-img-top" alt="Thoroughbred Horse">
+          <div class="card-body">
+            <h5 class="card-title">Thoroughbred</h5>
+            <p class="card-text">Best known for their use in horse racing, these horses are athletic and energetic.</p>
+            <a th:href="@{/breed}" class="btn btn-outline-primary">Learn More</a>
+          </div>
+        </div>
+      </div>
+      <!-- Breed 3 -->
+      <div class="col-md-4 mb-4">
+        <div class="card breed-card h-100">
+          <img th:src="@{/images/masood-aslami-c-5xyr26BvA-unsplash.jpg}" class="card-img-top" alt="Quarter Horse">
+          <div class="card-body">
+            <h5 class="card-title">Quarter Horse</h5>
+            <p class="card-text">American breed that excels at sprinting short distances and is great for ranch work.</p>
+            <a th:href="@{/breed}" class="btn btn-outline-primary">Learn More</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="text-center mt-3">
+      <a th:href="@{/breed}" class="btn btn-primary">View More Breeds</a>
+    </div>
+  </section>
+
+  <!-- Riding Lessons Section -->
+  <section class="mb-5 py-4 bg-light rounded">
+    <div class="container">
+      <h2 class="text-center mb-4">Learn to Ride Horses</h2>
+      <div class="row justify-content-center">
+        <div class="col-md-5 mb-3 mb-md-0">
+          <div class="card h-100">
+            <div class="card-body text-center">
+              <h3 class="card-title">Adult Lessons</h3>
+              <p class="card-text">Personalized training for adults of all skill levels from beginners to advanced riders.</p>
+              <a th:href="@{/adult}" class="btn btn-primary">View Programs</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-5">
+          <div class="card h-100">
+            <div class="card-body text-center">
+              <h3 class="card-title">Children Lessons</h3>
+              <p class="card-text">Fun and safe riding lessons designed specifically for young riders.</p>
+              <a th:href="@{/child}" class="btn btn-primary">View Programs</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Quick Links Section -->
+  <section class="mb-5">
+    <div class="row g-4">
+      <div class="col-md-4">
+        <div class="card h-100">
+          <div class="card-body">
+            <h5 class="card-title"><i class="bi bi-heart-pulse"></i> Horse Health</h5>
+            <p class="card-text">Learn about common horse sicknesses and how to keep your horse healthy.</p>
+            <a th:href="@{/sickness}" class="btn btn-outline-secondary">Health Guide</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card h-100">
+          <div class="card-body">
+            <h5 class="card-title"><i class="bi bi-egg-fried"></i> Nutrition Guide</h5>
+            <p class="card-text">Discover the best diets for different horse breeds and activity levels.</p>
+            <a th:href="@{/diet}" class="btn btn-outline-secondary">Diet Plans</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card h-100">
+          <div class="card-body">
+            <h5 class="card-title"><i class="bi bi-chat-square-text"></i> Behaviour Tips</h5>
+            <p class="card-text">Understand horse behaviour and learn effective training techniques.</p>
+            <a th:href="@{/behaviour}" class="btn btn-outline-secondary">Behaviour Guide</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- Footer -->
+<footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4 mb-4 mb-md-0">
+        <h5>Horse Training</h5>
+        <p>Providing quality horse training and riding lessons.</p>
+      </div>
+      <div class="col-md-4 mb-4 mb-md-0">
+        <h5>Quick Links</h5>
+        <ul class="list-unstyled">
+          <li><a th:href="@{/}" class="text-white">Home</a></li>
+          <li><a th:href="@{/breed}" class="text-white">Horse Breeds</a></li>
+          <li><a th:href="@{/lessons}" class="text-white">Riding Lessons</a></li>
+          <li><a th:href="@{/contact}" class="text-white">Contact Us</a></li>
+        </ul>
+      </div>
+      <div class="col-md-4">
+        <h5>Contact Info</h5>
+        <address>
+          Alakoy, Nicosia<br>
+          Bahcesehir University,<br>
+          Student Name: David Unegbu , Ahmad Rajab<br>
+          Email: ounegbu@baucyprus.edu.tr , arajab@baucyprus.edu.tr
+        </address>
+      </div>
+    </div>
+    <hr class="bg-light">
+    <div class="text-center">
+      <p class="mb-0">&copy; 2025 Frontend  Horse  Project. All rights reserved.</p>
+    </div>
+  </div>
+</footer>
+
+<!-- Bootstrap JS Bundle with Popper -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<!-- Bootstrap Icons -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+</body>
+</html>

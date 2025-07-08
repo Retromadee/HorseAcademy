@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Horse Breeds</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" th:href="@{/style.css}">
+    <link rel="stylesheet" th:href="@{/breedstyle.css}">
+
+</head>
+<body>
+<!-- Navigation -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+        <a class="navbar-brand" th:href="@{/}">Horse Training</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="justify-text-right">
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav me-auto">
+                <li class="nav-item">
+                    <a class="nav-link active" th:href="@{/}">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" th:href="@{/diet}">Diet</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" th:href="@{/breed}">Breed</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="healthDropdown" role="button" data-bs-toggle="dropdown">
+                        Health & Behavior
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" th:href="@{/sickness}">Sickness</a></li>
+                        <li><a class="dropdown-item" th:href="@{/behaviour}">Behavior</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" th:href="@{/contact}">Contact Us</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" th:href="@{/members}">Members</a>
+                </li>
+            </ul>
+            <!--
+            <form class="d-flex" th:action="@{/search}" method="get">
+              <input class="form-control me-2" type="search" name="query" placeholder="Search...">
+              <button class="btn btn-outline-light" type="submit">Search</button>
+            </form> -->
+        </div>
+    </div>
+    </div>
+</nav>
+
+<div class="container mt-5 mb-5">
+    <h1 class="text-center mb-4">Horse Breeds </h1>
+
+
+
+    <!-- Light Horse Breeds -->
+    <h3 class="category-header">Light Horse Breeds</h3>
+    <div class="row breed-category" data-category="light">
+        <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+            <div class="card h-100 breed-card">
+                <img th:src="@{/images/arabian_horse_img.jpg}"  class="card-img-top crop-img"  alt="Arabian Horse">
+                <div class="card-body">
+                    <h5 class="card-title">Arabian</h5>
+                    <h6 class="card-subtitle mb-2 text-muted">Origin: Middle East</h6>
+                    <p class="card-text">One of the oldest breeds, known for endurance, intelligence, and distinctive dished face. Typically 14.1-15.1 hands.</p>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item"><strong>Uses:</strong> Endurance, show, pleasure</li>
+                        <li class="list-group-item"><strong>Colors:</strong> Bay, gray, chestnut, black</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+            <div class="card h-100 breed-card">
+                <img th:src="@{/images/thorough_horse.jpg}" class="card-img-top" alt="Thoroughbred Horse">
+                <div class="card-body">
+                    <h5 class="card-title">Thoroughbred</h5>
+                    <h6 class="card-subtitle mb-2 text-muted">Origin: England</h6>
+                    <p class="card-text">Bred for racing, known for speed and spirit. Typically 15-17 hands. Hot-blooded temperament.</p>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item"><strong>Uses:</strong> Racing, eventing, show jumping</li>
+                        <li class="list-group-item"><strong>Colors:</strong> Bay, brown, chestnut, gray, black</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+            <div class="card h-100 breed-card">
+                <img th:src="@{/images/masood-aslami-c-5xyr26BvA-unsplash.jpg}" class="card-img-top" alt="Quarter Horse">
+                <div class="card-body">
+                    <h5 class="card-title">American Quarter Horse</h5>
+                    <h6 class="card-subtitle mb-2 text-muted">Origin: United States</h6>
+                    <p class="card-text">Muscular, versatile breed excelling at sprinting short distances. Typically 14.3-16 hands.</p>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item"><strong>Uses:</strong> Racing, ranch work, rodeo</li>
+                        <li class="list-group-item"><strong>Colors:</strong> All colors, most common sorrel</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+            <div class="card h-100 breed-card">
+                <img th:src="@{/images/jan-machacek-CA3TovyUCA0-unsplash.jpg}" class="card-img-top" alt="Appaloosa">
+                <div class="card-body">
+                    <h5 class="card-title">Appaloosa</h5>
+                    <h6 class="card-subtitle mb-2 text-muted">Origin: United States</h6>
+                    <p class="card-text">Known for colorful spotted coat patterns. Versatile with strong endurance. Typically 14.2-16 hands.</p>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item"><strong>Uses:</strong> Trail, pleasure, ranch work</li>
+                        <li class="list-group-item"><strong>Colors:</strong> Spotted patterns (leopard, blanket, snowflake)</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Draft Horse Breeds -->
+    <h3 class="category-header">Draft Horse Breeds</h3>
+    <div class="row breed-category" data-category="draft">
+        <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+            <div class="card h-100 breed-card">
+                <img src="https://via.placeholder.com/300x200?text=Clydesdale" class="card-img-top" alt="Clydesdale">
+                <div class="card-body">
+                    <h5 class="card-title">Clydesdale</h5>
+                    <h6 class="card-subtitle mb-2 text-muted">Origin: Scotland</h6>
+                    <p class="card-text">Large, powerful draft horse with distinctive feathering on legs. Typically 16-18 hands.</p>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item"><strong>Uses:</strong> Farm work, driving, show</li>
+                        <li class="list-group-item"><strong>Colors:</strong> Bay with white markings, roan</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+            <div class="card h-100 breed-card">
+                <img src="https://via.placeholder.com/300x200?text=Percheron" class="card-img-top" alt="Percheron">
+                <div class="card-body">
+                    <h5 class="card-title">Percheron</h5>
+                    <h6 class="card-subtitle mb-2 text-muted">Origin: France</h6>
+                    <p class="card-text">Elegant draft breed known for intelligence and willingness to work. Typically 15-19 hands.</p>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item"><strong>Uses:</strong> Farming, logging, driving</li>
+                        <li class="list-group-item"><strong>Colors:</strong> Gray, black</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+            <div class="card h-100 breed-card">
+                <img src="https://via.placeholder.com/300x200?text=Shire" class="card-img-top" alt="Shire">
+                <div class="card-body">
+                    <h5 class="card-title">Shire</h5>
+                    <h6 class="card-subtitle mb-2 text-muted">Origin: England</h6>
+                    <p class="card-text">One of the largest horse breeds, known for great strength. Typically 16-17.2 hands.</p>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item"><strong>Uses:</strong> Heavy farm work, brewing industry</li>
+                        <li class="list-group-item"><strong>Colors:</strong> Black, bay, gray</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+            <div class="card h-100 breed-card">
+                <img src="https://via.placeholder.com/300x200?text=Belgian+Draft" class="card-img-top" alt="Belgian Draft">
+                <div class="card-body">
+                    <h5 class="card-title">Belgian Draft</h5>
+                    <h6 class="card-subtitle mb-2 text-muted">Origin: Belgium</h6>
+                    <p class="card-text">Powerful draft horse with a gentle disposition. Typically 16-17 hands.</p>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item"><strong>Uses:</strong> Farming, logging, show</li>
+                        <li class="list-group-item"><strong>Colors:</strong> Chestnut with flaxen mane/tail</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Pony Breeds -->
+    <h3 class="category-header">Pony Breeds</h3>
+    <div class="row breed-category" data-category="pony">
+        <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+            <div class="card h-100 breed-card">
+                <img src="https://via.placeholder.com/300x200?text=Shetland" class="card-img-top" alt="Shetland Pony">
+                <div class="card-body">
+                    <h5 class="card-title">Shetland Pony</h5>
+                    <h6 class="card-subtitle mb-2 text-muted">Origin: Shetland Islands</h6>
+                    <p class="card-text">Small but very strong pony breed. Typically under 10.2 hands.</p>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item"><strong>Uses:</strong> Children's mount, driving</li>
+                        <li class="list-group-item"><strong>Colors:</strong> All colors except spotted</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+            <div class="card h-100 breed-card">
+                <img src="https://via.placeholder.com/300x200?text=Welsh+Pony" class="card-img-top" alt="Welsh Pony">
+                <div class="card-body">
+                    <h5 class="card-title">Welsh Pony</h5>
+                    <h6 class="card-subtitle mb-2 text-muted">Origin: Wales</h6>
+                    <p class="card-text">Elegant pony with excellent movement and temperament. Sections A-D by size.</p>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item"><strong>Uses:</strong> Riding, driving, jumping</li>
+                        <li class="list-group-item"><strong>Colors:</strong> All colors except piebald/skewbald</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+            <div class="card h-100 breed-card">
+                <img src="https://via.placeholder.com/300x200?text=Connemara" class="card-img-top" alt="Connemara">
+                <div class="card-body">
+                    <h5 class="card-title">Connemara</h5>
+                    <h6 class="card-subtitle mb-2 text-muted">Origin: Ireland</h6>
+                    <p class="card-text">Largest of the pony breeds, known for athleticism. Typically 13-15 hands.</p>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item"><strong>Uses:</strong> Sport pony, jumping, eventing</li>
+                        <li class="list-group-item"><strong>Colors:</strong> Gray, bay, brown, black</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+            <div class="card h-100 breed-card">
+                <img src="https://via.placeholder.com/300x200?text=Hackney+Pony" class="card-img-top" alt="Hackney Pony">
+                <div class="card-body">
+                    <h5 class="card-title">Hackney Pony</h5>
+                    <h6 class="card-subtitle mb-2 text-muted">Origin: England</h6>
+                    <p class="card-text">Known for high-stepping action and elegance. Typically 12-14 hands.</p>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item"><strong>Uses:</strong> Driving, show</li>
+                        <li class="list-group-item"><strong>Colors:</strong> Bay, brown, chestnut, black</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Sport Horse Breeds -->
+    <h3 class="category-header">Sport Horse Breeds</h3>
+    <div class="row breed-category" data-category="sport">
+        <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+            <div class="card h-100 breed-card">
+                <img src="https://via.placeholder.com/300x200?text=Hanoverian" class="card-img-top" alt="Hanoverian">
+                <div class="card-body">
+                    <h5 class="card-title">Hanoverian</h5>
+                    <h6 class="card-subtitle mb-2 text-muted">Origin: Germany</h6>
+                    <p class="card-text">Premier warmblood breed excelling in dressage and jumping. Typically 15.3-17.2 hands.</p>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item"><strong>Uses:</strong> Dressage, show jumping, eventing</li>
+                        <li class="list-group-item"><strong>Colors:</strong> Bay, chestnut, black, gray</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+            <div class="card h-100 breed-card">
+                <img src="https://via.placeholder.com/300x200?text=Dutch+Warmblood" class="card-img-top" alt="Dutch Warmblood">
+                <div class="card-body">
+                    <h5 class="card-title">Dutch Warmblood</h5>
+                    <h6 class="card-subtitle mb-2 text-muted">Origin: Netherlands</h6>
+                    <p class="card-text">Athletic sport horse with excellent jumping ability. Typically 16-17 hands.</p>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item"><strong>Uses:</strong> Show jumping, dressage, driving</li>
+                        <li class="list-group-item"><strong>Colors:</strong> All solid colors</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+            <div class="card h-100 breed-card">
+                <img src="https://via.placeholder.com/300x200?text=Trakehner" class="card-img-top" alt="Trakehner">
+                <div class="card-body">
+                    <h5 class="card-title">Trakehner</h5>
+                    <h6 class="card-subtitle mb-2 text-muted">Origin: East Prussia</h6>
+                    <p class="card-text">Elegant warmblood known for floating trot and athleticism. Typically 15.2-17 hands.</p>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item"><strong>Uses:</strong> Dressage, eventing, combined driving</li>
+                        <li class="list-group-item"><strong>Colors:</strong> All solid colors</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+            <div class="card h-100 breed-card">
+                <img src="https://via.placeholder.com/300x200?text=Oldenburg" class="card-img-top" alt="Oldenburg">
+                <div class="card-body">
+                    <h5 class="card-title">Oldenburg</h5>
+                    <h6 class="card-subtitle mb-2 text-muted">Origin: Germany</h6>
+                    <p class="card-text">Powerful yet elegant warmblood with exceptional movement. Typically 16-17.2 hands.</p>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item"><strong>Uses:</strong> Dressage, show jumping</li>
+                        <li class="list-group-item"><strong>Colors:</strong> All colors, often black or bay</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4 mb-4 mb-md-0">
+                <h5>Horse Training</h5>
+                <p>Providing quality horse training and riding lessons.</p>
+            </div>
+            <div class="col-md-4 mb-4 mb-md-0">
+                <h5>Quick Links</h5>
+                <ul class="list-unstyled">
+                    <li><a th:href="@{/}" class="text-white">Home</a></li>
+                    <li><a th:href="@{/breed}" class="text-white">Horse Breeds</a></li>
+                    <li><a th:href="@{/lessons}" class="text-white">Riding Lessons</a></li>
+                    <li><a th:href="@{/contact}" class="text-white">Contact Us</a></li>
+                </ul>
+            </div>
+            <div class="col-md-4">
+                <h5>Contact Info</h5>
+                <address>
+                    Alakoy, Nicosia<br>
+                    Bahcesehir University,<br>
+                    Student Name: David Unegbu , Ahmad Rajab<br>
+                    Email: ounegbu@baucyprus.edu.tr , arajab@baucyprus.edu.tr
+                </address>
+            </div>
+        </div>
+        <hr class="bg-light">
+        <div class="text-center">
+            <p class="mb-0">&copy; 2025 Frontend  Horse  Project. All rights reserved.</p>
+        </div>
+    </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>
